@@ -37,7 +37,8 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+
+return numbers.length;
 }
 
 /**
@@ -45,7 +46,11 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum
 }
 
 /**
@@ -53,7 +58,10 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  const sum = getSum(numbers)
+  const length = getLength(numbers)
+  return sum / length;
+  
 }
 
 /**
@@ -61,15 +69,19 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
-}
+  return Math.min(...numbers)
+  // const arr = 0;
+  // for (let i = 0; i < numbers.length; i++) 
+  //   if (numbers[i] < min) {
+  // min = numbers[i]}
+  }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  return Math.max(...numbers)
 }
 
 /**
@@ -77,15 +89,23 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
-}
+  const max = getMax(numbers);
+  const min = getMin(numbers);
+  return max - min;
+} 
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  const evens = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (i % 2 === 0) {
+      evens.push(i);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -93,5 +113,11 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  const odds = [];
+  for (let i = 0; i <= numbers.length; i++) {
+    if (i % 2 === 1) {
+      odds.push(i);
+    }
+  }
+  return odds;
 }
